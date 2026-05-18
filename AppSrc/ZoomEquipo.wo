@@ -33,7 +33,8 @@ Object oZoomEquipo is a cWebView
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
-        WebSetResponsive piColumnCount rmMobile to 4
+        WebSetResponsive piColumnCount rmMobile to 4       
+
 
         Object oequipoNombre is a cWebForm
             Entry_Item equipo.Nombre

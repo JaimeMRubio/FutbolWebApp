@@ -38,7 +38,8 @@ Object oZoomJugador is a cWebView
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
-        WebSetResponsive piColumnCount rmMobile to 4
+        WebSetResponsive piColumnCount rmMobile to 4        
+
 
         Object ojugadorNombre is a cWebForm
             Entry_Item jugador.Nombre
