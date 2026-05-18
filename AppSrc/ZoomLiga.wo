@@ -7,6 +7,7 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use SelectEquipo.wo
 
 Use cligaDataDictionary.dd
 
@@ -21,9 +22,30 @@ Object oZoomLiga is a cWebView
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
+    
+    // Se añade DD hijo apuntando al padre
+    Object oequipo_dd is a cequipoDataDictionary
+        Set DDO_Server to oliga_DD
+    End_Object
 
     Set Main_DD To oliga_DD
-    Set Server  To oliga_DD
+    Set Server  to oliga_DD
+    
+    //-----
+    
+    Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
+        Forward Send OnGetNavigateForwardData (&NavigateData) hoToView
+        
+        If (hoToView = oSelectEquipo) Begin
+            
+            Move nfFromParent to NavigateData.eNavigateType
+            
+            Move (RefTable(liga)) to NavigateData.iTable
+            
+        End
+    End_Procedure
+    
+    //----
 
 
     Object oWebMainPanel is a cWebPanel
@@ -62,7 +84,26 @@ Object oZoomLiga is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "EquiposMax"
         End_Object 
+        
+        
+        //Botón para ver equipos de esta liga
+        Object oBtnVerEquipos is a cWebButton
+        
+            Set piColumnSpan to 3
+            Set psCaption to "Ver equipos de esta liga"
+        
+            WebRegisterPath ntNavigateForward oSelectEquipo
+        
+           Procedure OnClick
+              Send NavigateForward of oSelectEquipo Self
+           End_Procedure
+        
+        End_Object    
+        
+     
     End_Object 
+    
+
 
     Object oActionGroup is a cWebMenuGroup
 
