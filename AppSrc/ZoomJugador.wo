@@ -17,10 +17,10 @@ Use cjugadorDataDictionary.dd
 
 Object oZoomJugador is a cWebView
     Set piColumnCount to 12
-    Set psCaption to "ZoomJugador"
+    Set psCaption to "Jugador"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtZoom
-    Set pbShowCaption to False
+    Set pbShowCaption to True
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
 
@@ -85,9 +85,18 @@ Object oZoomJugador is a cWebView
             End_Procedure
         End_Object 
         
+        
+        //Espacio
+        Object oEspacio is a cWebSpacer
+            Set piColumnSpan to 0
+            Set piHeight to 20
+        End_Object
+        
+        
+        //Botón para ver posiciones
         Object oBtnVerPosiciones is a cWebButton
-            Set piColumnSpan to 4
-            Set psCaption to "Ver Posiciones"
+            Set piColumnSpan to 4            
+            Set psCaption to "Ver Posiciones"            
             
             //Registramos el Path
             WebRegisterPath ntNavigateForward oSelectPosicion

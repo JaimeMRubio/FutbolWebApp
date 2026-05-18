@@ -13,10 +13,10 @@ Use cligaDataDictionary.dd
 
 Object oZoomLiga is a cWebView
     Set piColumnCount to 12
-    Set psCaption to "ZoomLiga"
+    Set psCaption to "Liga"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtZoom
-    Set pbShowCaption to False
+    Set pbShowCaption to True
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
 
@@ -70,6 +70,12 @@ Object oZoomLiga is a cWebView
             Set psLabel to "EquiposMax"
         End_Object 
         
+        //Espacios
+        Object oEspacio is a cWebSpacer
+            Set piColumnSpan to 0
+            Set piHeight to 20
+        End_Object
+        
         
         //Botón para ver equipos de esta liga
         Object oBtnVerEquipos is a cWebButton
@@ -83,11 +89,19 @@ Object oZoomLiga is a cWebView
               Send NavigateForward of oSelectEquipo Self
            End_Procedure
         
-        End_Object    
+        End_Object        
         
-        
+       
+        //Linea separadora
+        Object oSeparador is a cWebHtmlBox
+            Set piColumnSpan to 0
+            
+            Set psHtml to "<hr style='margin-top: 20px; margin-bottom: 20px; border: none; border-top: 1px solid black;'>"
+            
+        End_Object     
+                            
       // Lista de equipos de la liga
-      Object oListaEquipoLiga is a cWebList
+        Object oListaEquipoLiga is a cWebList
             
             Set Server to oequipo_dd
             
@@ -102,10 +116,10 @@ Object oZoomLiga is a cWebView
                 Set piWidth to 500
             End_Object
             
-      End_Object
+        End_Object
         
                          
-    End_Object 
+     End_Object 
     
 
 
