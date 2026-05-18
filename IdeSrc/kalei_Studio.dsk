@@ -18,13 +18,13 @@ Right=1428
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomLiga.wo
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
 ViewType=1
 Top=21
 Left=0
 Bottom=718
 Right=1428
-CursorLine=100
-CursorColumn=52
+CursorLine=96
+CursorColumn=60
 TabIndex=1
 TabGroup=0
