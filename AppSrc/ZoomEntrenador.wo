@@ -34,21 +34,7 @@ Object oZoomEntrenador is a cWebView
 
     Set Main_DD To oentrenador_DD
     Set Server  to oentrenador_DD
-    
-    //-----
-    
-    Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
-        Forward Send OnGetNavigateForwardData (&NavigateData) hoToView
-        
-        If (hoToView = oSelectEquipo) Begin
-            
-            Move nfFromChild to NavigateData.eNavigateType
-            
-            Move (RefTable(equipo)) to NavigateData.iTable
-        End
-    End_Procedure
-    
-    //-----
+
 
 
     Object oWebMainPanel is a cWebPanel
