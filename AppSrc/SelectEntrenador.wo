@@ -76,7 +76,7 @@ Object oSelectEntrenador is a cWebView
             Set pbResizable to False
             Set piListRowSpan to 1
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
-            Set peAlign to alignRight
+            Set peAlign to alignRight 
 
             WebRegisterPath ntNavigateForward oZoomEntrenador
 
@@ -86,6 +86,7 @@ Object oSelectEntrenador is a cWebView
 
             Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
                 Move True to NavigateData.bReadOnly
+                Send ShowInfoBox "Ponte en modo lectura"
             End_Procedure
 
         End_Object 
