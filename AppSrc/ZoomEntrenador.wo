@@ -41,10 +41,10 @@ Object oZoomEntrenador is a cWebView
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
         
-        //Botón para navegar al Select Padre
+        //Botón para navegar al Select Padre SelectEquipos
         Object oBtnVolverSelectEntrenador is a cWebButton
             Set piColumnSpan to 4
-            Set psCaption to "Ir a Select Padre"
+            Set psCaption to "Ir a Equipos"
             
             WebRegisterPath ntNavigateForward oSelectEquipo
             
